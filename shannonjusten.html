@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ShannonJusten</title>
+    <style>
+        body {
+            text-align: center;
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            background-color: #ffebeb;
+            overflow: hidden;
+        }
+        h1 {
+            color: #d63384;
+            font-size: 2em;
+        }
+        .buttons {
+            margin-top: 20px;
+            position: relative;
+            width: 300px;
+            height: 100px;
+        }
+        button {
+            font-size: 20px;
+            padding: 10px 20px;
+            margin: 10px;
+            border: none;
+            cursor: pointer;
+            border-radius: 8px;
+            transition: 0.3s;
+            position: absolute;
+        }
+        #yes {
+            background-color: #28a745;
+            color: white;
+            left: 50px;
+        }
+        #yes:hover {
+            background-color: #218838;
+        }
+        #no {
+            background-color: #dc3545;
+            color: white;
+            left: 150px;
+            top: 0;
+        }
+        #response {
+            display: none;
+            font-size: 1.5em;
+            color: #28a745;
+            margin-top: 20px;
+        }
+        img {
+            width: 200px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+    <img src="thephoto.jpg" alt="Cute Image">
+    <h1>You deserve something better than last friday.. Let me do a better one..</h1>
+    <div class="buttons">
+        <button id="yes" onclick="yesClicked()">Yes</button>
+        <button id="no" onmouseover="moveButton()">No</button>
+    </div>
+    <p id="response">woohooooo let's make it worthwhile ❤️</p>
+    
+    <script>
+        function yesClicked() {
+            document.getElementById("response").style.display = "block";
+        }
+        
+        function moveButton() {
+            var button = document.getElementById("no");
+            var container = document.querySelector(".buttons");
+            var maxX = container.clientWidth - button.clientWidth;
+            var maxY = container.clientHeight - button.clientHeight;
+            var x = Math.random() * maxX;
+            var y = Math.random() * maxY;
+            button.style.left = x + "px";
+            button.style.top = y + "px";
+        }
+    </script>
+</body>
+</html>
